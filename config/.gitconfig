@@ -6,7 +6,7 @@
     editor = nvim
     pager = less -F -X -R
 [github]
-    user = dysonance
+    user = JTAmos
     email = jamos125@gmail.com
 [pull]
     rebase = false
