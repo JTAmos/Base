@@ -142,7 +142,6 @@ syn match pythonDecorator       "@\@<=\w*\|@"
 syn match pythonDelimiter       "\[\|\]\|(\|)\|,\|{\|}\|;"
 syn match pythonFunction        "\w*(\@=\|\.\@<=\w*\[" contains=pythonDelimiter
 syn match pythonBuiltinFunction "\(\.\)\@<!\(abs\|bytes\|eval\|enumerate\|eval\|exec\|getattr\|globals\|hasattr\|hash\|id\|isinstance\|issubclass\|iter\|len\|locals\|map\|next\|object\|open\|ord\|print\|property\|range\|repr\|reversed\|round\|setattr\|slice\|sorted\|type\|vars\|zip\)(\@=" contains=pythonDelimiter
-syn match pythonNumber          "\<[0-9_.]\+\>\|[0-9_]\+e[0-9-]\+"
 syn match pythonOperator        "+\|-\|*\|\/\|\/\/\(\/\)\@!\|->\|<\|>\|=\||\|&\|!\|:\|%\|\.\|\~\|\<is\>\|\<not\>\|\<or\>\|\<and\>"
 syn match pythonTodo            "TODO\|FIXME\|NOTE"
 syn match pythonType            "\<[A-Z]\w\+Error\>"
@@ -156,6 +155,7 @@ syn match pythonLibrary         "\(\<os\>\.\)\@<=\(path\)"
 syn match pythonLibrary         "\(^import \)\@<=\(\w\|\.\)\+\|\(^import.*as \)\@<=\w\+"
 syn match pythonFormat          "\({}\)\|%[A-z]\|?" contained containedin=pythonFormattedString,pythonString
 syn match pythonConstant        "\<[A-Z_0-9]\{2,\}\>"
+syn match pythonNumber          "\<[0-9_.]\+\>\|[0-9_]\+e[0-9-]\+"
 
 syn region pythonFormat          start="{"            end="}" contains=ALL contained containedin=pythonFormattedString keepend
 syn region pythonComment         start="#"            end="$" contains=pythonTodo

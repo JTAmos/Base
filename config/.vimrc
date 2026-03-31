@@ -153,8 +153,11 @@ autocmd filetype fortran setlocal formatprg=fprettify\ --silent\ -
 autocmd filetype html setlocal formatprg=tidy\ -config\ $HOME/.tidyrc
 autocmd filetype javascript,vue setlocal formatprg=prettier\ --parser\ vue\ --print-width\ 120\ --tab-width\ 4\ --no-bracket-spacing\ --prose-wrap\ preserve\ --trailing-comma\ all
 autocmd filetype javascript,vue setlocal indentexpr=GetJavascriptIndent()
-autocmd filetype python setlocal formatprg=black\ --line-length\ 125\ --quiet\ -\ 2>/dev/null
+"autocmd filetype python setlocal formatprg=black\ --line-length\ 125\ --quiet\ -\ 2>/dev/null
+autocmd filetype python setlocal formatprg=ruff\ format\ --silent\ -
+autocmd filetype python nmap <leader>is :!ruff check --select I --fix %<CR>
 autocmd filetype r setlocal formatprg=python\ $R_LIBS_USER/rfmt/python/rfmt.py\ \--margin1\ 120\ --indent\ 2\ --space_arg_eq\ False
+autocmd filetype rust setlocal formatprg=rustfmt\ --edition\ 2024
 autocmd filetype sql setlocal formatprg=pg_format\ -
 autocmd filetype bash,zsh,shell setlocal formatprg=shfmt\ -i\ 4
 
@@ -229,6 +232,22 @@ endfunction
 
 " General Mappings {{{
 
+" emacs-style cursor movement in command prompt
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+" emacs-style cursor movement in insert mode
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
+inoremap <C-P> <Up>
+inoremap <C-N> <Down>
+
 " refactoring / variable replacement
 " local (scope) refactor
 nmap gr gd[{V%::s/<C-R>///gc<Left><Left><Left>
@@ -300,7 +319,7 @@ autocmd filetype cpp nmap <leader>hdr :e %:r.h<cr>
 autocmd filetype cpp nmap <leader>src :e %:r.cpp<cr>
 
 " debuggers
-autocmd filetype python nmap <leader>db oimport ipdb; ipdb.set_trace()<esc>
+autocmd filetype python nmap <leader>db oimport ipdb; ipdb.set_trace()  # fmt: skip<esc>
 
 " case-insenstive word search
 nnoremap <leader>* */\c<CR>
@@ -315,8 +334,8 @@ nnoremap <leader>sc :s#\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
 nnoremap <silent> <leader>ss :w<CR>
 nnoremap <silent> <leader>qq :q<CR>
 
-" easier auto-pairs prevention shortcut
-imap <C-P> <C-V>
+"" easier auto-pairs prevention shortcut
+"imap <C-P> <C-V>
 
 " pivot split pane orientations
 " vertical to horizontal

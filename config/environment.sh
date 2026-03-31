@@ -11,7 +11,7 @@ function py() { if [ -d "venv" ]; then PYTHONPATH=$(pwd) venv/bin/python $@; els
 function gls() { git ls-files ${@:2} | grep $1; }
 alias ggi="git grep -nIi"
 alias gg="git grep -nI"
-alias pp="echo 'setting python path to $(pwd)' && export PYTHONPATH=$(pwd) && export PYLINTHOME=$(pwd)/.pylint.d"
+alias les='less -S'
 
 function genstubs() {
     if [ -d "venv" ]; then source venv/bin/activate; fi

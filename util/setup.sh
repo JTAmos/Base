@@ -53,6 +53,7 @@ setup_directory ~/.history/zsh
 setup_directory ~/.vim
 setup_directory ~/.config
 setup_directory ~/.config/alacritty
+setup_directory ~/.config/bat
 setup_directory ~/.config/nvim
 setup_directory ~/.matplotlib
 setup_directory ~/.ipython
@@ -66,6 +67,7 @@ setup_directory ~/Code/Side
 if ! [ -d ~/.tmux/plugins/tpm ]; then git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm; fi
 echo "linking configuration files"
 ln -sf ~/Base/.vim/colors ~/.vim/colors
+ln -sf ~/Base/.vim/after ~/.vim/after
 ln -sf ~/Base/.vim/syntax ~/.vim/syntax
 ln -sf ~/Base/.vim/indent ~/.vim/indent
 ln -sf ~/Base/.vim/skeletons ~/.vim/skeletons
@@ -77,6 +79,7 @@ ln -sf ~/Base/config/.vimrc ~/.vimrc
 ln -sf ~/Base/config/init.vim ~/.config/nvim/
 ln -sf ~/Base/config/starship.toml 
 ln -sf ~/Base/config/alacritty.yml ~/
+ln -sf ~/Base/config/bat.conf ~/.config/bat/config
 ln -sf ~/Base/config/.tmux.conf ~/
 ln -sf ~/Base/config/.tigrc ~/
 ln -sf ~/Base/config/.psqlrc ~/

@@ -50,7 +50,7 @@ Plug 'python-rope/ropevim'            " python refactoring tools
 Plug 'JuliaEditorSupport/julia-vim'                " julia language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " go language support
 Plug 'vim-scripts/Vim-R-plugin'                    " R language support improved
-Plug 'plasticboy/vim-markdown'                     " Markdown language support
+"Plug 'plasticboy/vim-markdown'                     " Markdown language support
 Plug 'hashivim/vim-terraform'                      " basic vim/terraform integration
 Plug 'pearofducks/ansible-vim'                     " common ansible filetypes (j2, hosts, certain yaml)
 Plug 'mattn/emmet-vim'                             " web design workflow utilities
